@@ -24,12 +24,11 @@ body {
  */
 
 .banner-wrap {
-  background-image: url(./assets/bgimage.jpg);
+  background-image: url(./assets/cover.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
-  border-bottom: 10px solid #222;
   position: relative;
   z-index: 1;
 }
@@ -38,7 +37,7 @@ body {
   height: 100%;
   width: 100%;
   background: black;
-  opacity: 60%;
+  opacity: 50%;
   position: absolute;
   top: 0;
 }
