@@ -52,6 +52,7 @@
     <link href="style.css" rel="stylesheet" />
   </head>
   <body class="bg-light">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="px-5 p-3 text-white fixed-top bg-dark bg-opacity-75">
       <div class="d-flex align-items-center justify-content-between flex-wrap">
         <div class="float-md-start text-center">
@@ -84,392 +85,421 @@
           class="nav nav-masthead justify-content-center float-md-end"
         >
           <a
-            class="nav-link active font-heading fw-light"
+            id="nav-home"
+            class="nav-link font-heading fw-light"
             aria-current="page"
             href="#home"
             >Home</a
           >
-          <a class="nav-link font-heading fw-light" href="#about-me"
+          <a
+            id="nav-about"
+            class="nav-link font-heading fw-light"
+            href="#about-me"
             >About me</a
           >
-          <a class="nav-link font-heading fw-light" href="#projects"
+          <a
+            id="nav-projects"
+            class="nav-link font-heading fw-light"
+            href="#projects"
             >Projects</a
           >
-          <a class="nav-link font-heading fw-light" href="#contact">Contact</a>
+          <a
+            id="nav-contact"
+            class="nav-link font-heading fw-light"
+            href="#contact"
+            >Contact</a
+          >
         </nav>
       </div>
     </header>
+    <main id="main-content">
+      <div
+        class="banner-wrap vh-100 vw-100 d-flex align-items-center justify-content-center text-white"
+        id="home"
+      >
+        <div class="overlay"></div>
+        <div class="d-flex flex-column">
+          <h1 class="display-1 fw-normal font-heading text-center">
+            THIS IS SHANE KILIAN
+          </h1>
 
-    <div
-      class="banner-wrap vh-100 vw-100 d-flex align-items-center justify-content-center text-white"
-      id="home"
-    >
-      <div class="overlay"></div>
-      <main class="text-center">
-        <h1 class="display-1 fw-normal font-heading">THIS IS SHANE KILIAN</h1>
+          <span class="lead text-center" id="typed"
+            >Fullstack Developer in the making. <br />
+            Air Traffic Controller. <br />
+            Cat Nerd</span
+          >
+        </div>
+      </div>
 
-        <span class="lead" id="typed"
-          >Fullstack Developer in the making. <br />
-          Air Traffic Controller. <br />
-          Cat Nerd</span
-        >
-      </main>
-    </div>
+      <section id="about-me">
+        <div class="container p-5">
+          <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+            <div class="card-body">
+              <div class="row p-3">
+                <div class="col-md-6 col-sm-12">
+                  <div class="row">
+                    <div class="col-md-5">
+                      <img
+                        src="./assets/Shane ID Photo.webp"
+                        class="img-fluid"
+                        alt="Profile Picture"
+                      />
+                    </div>
+                    <div class="col-md-7 mt-3">
+                      <p class="font-heading fw-bold">Name:</p>
+                      <p>Shane Kilian</p>
 
-    <section id="about-me">
-      <div class="container p-5">
-        <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
-          <div class="card-body">
-            <div class="row p-3">
-              <div class="col-md-6 col-sm-12">
-                <div class="row">
-                  <div class="col-md-5">
-                    <img
-                      src="./assets/Shane ID Photo.webp"
-                      class="img-fluid"
-                      alt="Profile Picture"
-                    />
-                  </div>
-                  <div class="col-md-7 mt-3">
-                    <p class="font-heading fw-bold">Name:</p>
-                    <p>Shane Kilian</p>
+                      <p class="font-heading fw-bold">Profile:</p>
+                      <p>Full Stack Developer in the making</p>
+                      <p class="font-heading fw-bold">Email:</p>
+                      <p>shanekilian66@gmail.com</p>
+                      <p class="font-heading fw-bold">Phone:</p>
+                      <p>+27 71 350 3897</p>
 
-                    <p class="font-heading fw-bold">Profile:</p>
-                    <p>Full Stack Developer in the making</p>
-                    <p class="font-heading fw-bold">Email:</p>
-                    <p>shanekilian66@gmail.com</p>
-                    <p class="font-heading fw-bold">Phone:</p>
-                    <p>+27 71 350 3897</p>
-
-                    <p>
-                      <button
-                        type="button"
-                        class="btn btn-primary position-relative font-heading fw-bold"
-                        href="#projects"
-                      >
-                        Skills:
-                        <span
-                          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                      <p>
+                        <button
+                          type="button"
+                          class="btn btn-primary position-relative font-heading fw-bold"
+                          href="#projects"
                         >
-                          4+
-                          <span class="visually-hidden">skils</span>
-                        </span>
-                      </button>
+                          Skills:
+                          <span
+                            class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"
+                          >
+                            4+
+                            <span class="visually-hidden">skils</span>
+                          </span>
+                        </button>
 
-                      <span
-                        class="badge rounded-pill bg-dark font-heading fw-semibold"
-                        >HTML</span
-                      >
-                      <span
-                        class="badge rounded-pill bg-dark font-heading fw-semibold"
-                        >CSS</span
-                      >
-                      <span
-                        class="badge rounded-pill bg-dark font-heading fw-semibold"
-                        >Git</span
-                      >
-                      <span
-                        class="badge rounded-pill bg-dark font-heading fw-semibold"
-                        >JavaScript</span
-                      >
-                    </p>
+                        <span
+                          class="badge rounded-pill bg-dark font-heading fw-semibold"
+                          >HTML</span
+                        >
+                        <span
+                          class="badge rounded-pill bg-dark font-heading fw-semibold"
+                          >CSS</span
+                        >
+                        <span
+                          class="badge rounded-pill bg-dark font-heading fw-semibold"
+                          >Git</span
+                        >
+                        <span
+                          class="badge rounded-pill bg-dark font-heading fw-semibold"
+                          >JavaScript</span
+                        >
+                        <span
+                          class="badge rounded-pill bg-dark font-heading fw-semibold"
+                          >Bootstrap</span
+                        >
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="col-md-6 mt-3">
-                <h1 class="text-center text-md-start font-heading fw-normal">
-                  <mark>About me</mark>
-                </h1>
-                <p class="lead">
-                  Full time Air Traffic Controller & part time student based in
-                  Port Alfred EC. Started with doing small freelancing projects
-                  to make our lifes easier in aviation with building web apps
-                  and this is where the love for coding started. Currently busy
-                  with the Zaio Full Stack AI Bootcamp while waiting for
-                  regestrations to open so that I can start my journey with BcS
-                  Computer Science
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="container p-5">
-        <h1 class="text-center font-heading fw-normal">
-          <mark>Projects</mark>
-        </h1>
-        <div class="row">
-          <div class="col-md-4 mt-3">
-            <div class="card">
-              <img
-                src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/Tesla.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title font-heading">Tesla Landing Page</h5>
-                <p class="card-text">Built this with HTML & CSS</p>
-                <a
-                  href="https://shanekilian-ecars.netlify.app/"
-                  target="_blank"
-                  class="btn btn-primary font-heading"
-                  >View Website</a
-                >
-                <a
-                  href="https://github.com/shanekilian/ShaneKilian-ecars.git"
-                  target="_blank"
-                  class="btn btn-outline-dark"
-                  ><i class="bi bi-code-slash"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mt-3">
-            <div class="card">
-              <img
-                src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title font-heading">Netflix Landing Page</h5>
-                <p class="card-text">Built this with HTML & CSS</p>
-                <a
-                  href="https://shane-kilian-nettflix.netlify.app/"
-                  target="_blank"
-                  class="btn btn-primary font-heading"
-                  >View Website</a
-                >
-                <a
-                  href="https://github.com/shanekilian/ShaneKilian-netflix-clone.git"
-                  target="_blank"
-                  class="btn btn-outline-dark"
-                  ><i class="bi bi-code-slash"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mt-3">
-            <div class="card">
-              <img
-                src="./assets/html_youtube.webp"
-                class="card-img-top"
-                alt="..."
-              />
-              <div class="card-body">
-                <h5 class="card-title font-heading">YouTube Landing Page</h5>
-                <p class="card-text">Built this with HTML & CSS</p>
-                <a
-                  href="https://shane-kilian-faketube-clone.netlify.app/"
-                  target="_blank"
-                  class="btn btn-primary font-heading"
-                  >View Website</a
-                >
-                <a
-                  href="https://github.com/shanekilian/faketube.git"
-                  target="_blank"
-                  class="btn btn-outline-dark"
-                  ><i class="bi bi-code-slash"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mt-3">
-            <div class="card">
-              <img
-                src="./assets/link-preview-img.webp"
-                class="card-img-top"
-                alt="Sector APP Preview"
-              />
-              <div class="card-body">
-                <h5 class="card-title font-heading">FAPA Sector Controll</h5>
-                <p class="card-text">
-                  Built this with HTML, CSS, JS & Firebase
-                </p>
-                <a
-                  href="./assets/fapa-gfa-sector-control-readme (3).html"
-                  target="_blank"
-                  class="btn btn-primary font-heading"
-                  >View Website</a
-                >
-                <a
-                  href="./assets/fapa-gfa-sector-control-readme (3).html"
-                  target="_blank"
-                  class="btn btn-outline-dark"
-                  ><i class="bi bi-code-slash"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mt-3">
-            <div class="card">
-              <img
-                src="./assets/fapa-tower-document-control-link-preview.webp"
-                class="card-img-top"
-                alt="ATS Training Operations System Preview"
-              />
-              <div class="card-body">
-                <h5 class="card-title font-heading">
-                  ATC Tower Document Controll System
-                </h5>
-                <p class="card-text">
-                  Built this with HTML, CSS, JS & Supabase
-                </p>
-                <a
-                  href="./assets/fapa-tower-document-control-readme (3).html"
-                  target="_blank"
-                  class="btn btn-primary font-heading"
-                  >View Website</a
-                >
-                <a
-                  href="./assets/fapa-tower-document-control-readme (3).html"
-                  target="_blank"
-                  class="btn btn-outline-dark"
-                  ><i class="bi bi-code-slash"></i
-                ></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-md-4 mt-3">
-            <div class="card">
-              <img
-                src="./assets/43-atc-training-suite-preview.webp"
-                class="card-img-top"
-                alt="ATS Training Operations System Preview"
-              />
-              <div class="card-body">
-                <h5 class="card-title font-heading">
-                  ATS Training Operations System
-                </h5>
-                <p class="card-text">
-                  Built this with HTML, CSS, JS & Supabase
-                </p>
-                <a
-                  href="./assets/atc-system-readme.html"
-                  target="_blank"
-                  class="btn btn-primary font-heading"
-                  >View Website</a
-                >
-                <a
-                  href="./assets/atc-system-readme.html"
-                  target="_blank"
-                  class="btn btn-outline-dark"
-                  ><i class="bi bi-code-slash"></i
-                ></a>
+                <div class="col-md-6 mt-3">
+                  <h1 class="text-center text-md-start font-heading fw-normal">
+                    <mark>About me</mark>
+                  </h1>
+                  <p class="lead">
+                    Full time Air Traffic Controller & part time student based
+                    in Port Alfred EC. Started with doing small freelancing
+                    projects to make our lifes easier in aviation with building
+                    web apps and this is where the love for coding started.
+                    Currently busy with the Zaio Full Stack AI Bootcamp while
+                    waiting for regestrations to open so that I can start my
+                    journey with BcS Computer Science
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section id="print-resume" class="d-print-none">
-      <div class="container p-5 text-center">
-        <div class="card p-4">
-          <div class="card-body">
-            <h2 class="font-heading fw-normal">
-              <mark>Want a copy of my résumé?</mark>
-            </h2>
-            <p class="lead">
-              Press <kbd>Ctrl</kbd> + <kbd>P</kbd> (Windows) or <kbd>Cmd</kbd> +
-              <kbd>P</kbd> (Mac) to print or save this page as a one-page PDF
-              résumé.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container p-5">
-        <div class="card p-3">
-          <div class="card-body px-5 text-center">
-            <h1 class="font-heading fw-normal"><mark>Let's Connect</mark></h1>
-            <p class="lead">
-              Let's build something together :) Connect to collaborate, hire, or
-              build!
-            </p>
-            <a
-              class="fs-2 text-reset"
-              href="https://www.instagram.com/shane_kilian?igsh=MXc0b3NlMGRpOTY2OA%3D%3D&utm_source=qr"
-              target="_blank"
-              ><i class="bi bi-instagram m-2"></i
-            ></a>
-            <a
-              class="fs-2 text-reset"
-              href="https://za.linkedin.com/in/shane-zachnes-kilian-8509481a2"
-              target="_blank"
-              ><i class="bi bi-linkedin m-2"></i
-            ></a>
-            <a
-              class="fs-2 text-reset"
-              href="https://github.com/shanekilian"
-              target="_blank"
-              ><i class="bi bi-github m-2"></i
-            ></a>
-
-            <form>
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="email"
-                  placeholder="Email Address"
-                  required
+      <section id="projects">
+        <div class="container p-5">
+          <h1 class="text-center font-heading fw-normal">
+            <mark>Projects</mark>
+          </h1>
+          <div class="row">
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img
+                  src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/Tesla.png"
+                  class="card-img-top"
+                  alt="Tesla Landing Page Placeholder"
                 />
+                <div class="card-body">
+                  <h5 class="card-title font-heading">Tesla Landing Page</h5>
+                  <p class="card-text">Built this with HTML & CSS</p>
+                  <a
+                    href="https://shanekilian-ecars.netlify.app/"
+                    target="_blank"
+                    class="btn btn-primary font-heading"
+                    >View Website</a
+                  >
+                  <a
+                    href="https://github.com/shanekilian/ShaneKilian-ecars.git"
+                    target="_blank"
+                    class="btn btn-outline-dark"
+                    ><i class="bi bi-code-slash"></i
+                  ></a>
+                </div>
               </div>
+            </div>
 
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="name"
-                  placeholder="Name"
-                  required
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img
+                  src="https://zaiocontent.s3.eu-west-2.amazonaws.com/images+of+courses/css_netflix.png"
+                  class="card-img-top"
+                  alt="Netflix Landing Page Placeholder"
                 />
+                <div class="card-body">
+                  <h5 class="card-title font-heading">Netflix Landing Page</h5>
+                  <p class="card-text">Built this with HTML & CSS</p>
+                  <a
+                    href="https://shane-kilian-nettflix.netlify.app/"
+                    target="_blank"
+                    class="btn btn-primary font-heading"
+                    >View Website</a
+                  >
+                  <a
+                    href="https://github.com/shanekilian/ShaneKilian-netflix-clone.git"
+                    target="_blank"
+                    class="btn btn-outline-dark"
+                    ><i class="bi bi-code-slash"></i
+                  ></a>
+                </div>
               </div>
+            </div>
 
-              <div class="mb-3">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="subject"
-                  placeholder="Subject"
-                  required
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img
+                  src="./assets/html_youtube.webp"
+                  class="card-img-top"
+                  alt="YouTube Landing Page Placeholder"
                 />
+                <div class="card-body">
+                  <h5 class="card-title font-heading">YouTube Landing Page</h5>
+                  <p class="card-text">Built this with HTML & CSS</p>
+                  <a
+                    href="https://shane-kilian-faketube-clone.netlify.app/"
+                    target="_blank"
+                    class="btn btn-primary font-heading"
+                    >View Website</a
+                  >
+                  <a
+                    href="https://github.com/shanekilian/faketube.git"
+                    target="_blank"
+                    class="btn btn-outline-dark"
+                    ><i class="bi bi-code-slash"></i
+                  ></a>
+                </div>
               </div>
+            </div>
 
-              <div class="mb-3">
-                <textarea
-                  class="form-control"
-                  id="message"
-                  placeholder="Message"
-                  required
-                ></textarea>
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img
+                  src="./assets/link-preview-img.webp"
+                  class="card-img-top"
+                  alt="Sector APP Preview"
+                />
+                <div class="card-body">
+                  <h5 class="card-title font-heading">FAPA Sector Controll</h5>
+                  <p class="card-text">
+                    Built this with HTML, CSS, JS & Firebase
+                  </p>
+                  <a
+                    href="./assets/fapa-gfa-sector-control-readme (3).html"
+                    target="_blank"
+                    class="btn btn-primary font-heading"
+                    >View Website</a
+                  >
+                  <a
+                    href="./assets/fapa-gfa-sector-control-readme (3).html"
+                    target="_blank"
+                    class="btn btn-outline-dark"
+                    ><i class="bi bi-code-slash"></i
+                  ></a>
+                </div>
               </div>
+            </div>
 
-              <button type="submit" class="btn btn-primary font-heading">
-                Submit
-              </button>
-            </form>
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img
+                  src="./assets/fapa-tower-document-control-link-preview.webp"
+                  class="card-img-top"
+                  alt="ATS Training Operations System Preview"
+                />
+                <div class="card-body">
+                  <h5 class="card-title font-heading">
+                    ATC Tower Document Controll System
+                  </h5>
+                  <p class="card-text">
+                    Built this with HTML, CSS, JS & Supabase
+                  </p>
+                  <a
+                    href="./assets/fapa-tower-document-control-readme (3).html"
+                    target="_blank"
+                    class="btn btn-primary font-heading"
+                    >View Website</a
+                  >
+                  <a
+                    href="./assets/fapa-tower-document-control-readme (3).html"
+                    target="_blank"
+                    class="btn btn-outline-dark"
+                    ><i class="bi bi-code-slash"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-4 mt-3">
+              <div class="card">
+                <img
+                  src="./assets/43-atc-training-suite-preview.webp"
+                  class="card-img-top"
+                  alt="ATS Training Operations System Preview"
+                />
+                <div class="card-body">
+                  <h5 class="card-title font-heading">
+                    ATS Training Operations System
+                  </h5>
+                  <p class="card-text">
+                    Built this with HTML, CSS, JS & Supabase
+                  </p>
+                  <a
+                    href="./assets/atc-system-readme.html"
+                    target="_blank"
+                    class="btn btn-primary font-heading"
+                    >View Website</a
+                  >
+                  <a
+                    href="./assets/atc-system-readme.html"
+                    target="_blank"
+                    class="btn btn-outline-dark"
+                    ><i class="bi bi-code-slash"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      <section id="print-resume" class="d-print-none">
+        <div class="container p-5 text-center">
+          <div class="card p-4">
+            <div class="card-body">
+              <h2 class="font-heading fw-normal">
+                <mark>Want a copy of my résumé?</mark>
+              </h2>
+              <p class="lead">
+                Press <kbd>Ctrl</kbd> + <kbd>P</kbd> (Windows) or
+                <kbd>Cmd</kbd> + <kbd>P</kbd> (Mac) to print or save this page
+                as a one-page PDF résumé.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <div class="container p-5">
+          <div class="card p-3">
+            <div class="card-body px-5 text-center">
+              <h1 class="font-heading fw-normal"><mark>Let's Connect</mark></h1>
+              <p class="lead">
+                Let's build something together :) Connect to collaborate, hire,
+                or build!
+              </p>
+              <a
+                class="fs-2 text-reset"
+                href="https://www.instagram.com/shane_kilian?igsh=MXc0b3NlMGRpOTY2OA%3D%3D&utm_source=qr"
+                target="_blank"
+                ><i class="bi bi-instagram m-2"></i
+              ></a>
+              <a
+                class="fs-2 text-reset"
+                href="https://za.linkedin.com/in/shane-zachnes-kilian-8509481a2"
+                target="_blank"
+                ><i class="bi bi-linkedin m-2"></i
+              ></a>
+              <a
+                class="fs-2 text-reset"
+                href="https://github.com/shanekilian"
+                target="_blank"
+                ><i class="bi bi-github m-2"></i
+              ></a>
+
+              <form>
+                <div class="mb-3 text-start">
+                  <label for="email" class="form-label font-heading fw-bold"
+                    >Email Address</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="you@example.com"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3 text-start">
+                  <label for="name" class="form-label font-heading fw-bold"
+                    >Name</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Your name"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3 text-start">
+                  <label for="subject" class="form-label font-heading fw-bold"
+                    >Subject</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="subject"
+                    placeholder="What's this about?"
+                    required
+                  />
+                </div>
+
+                <div class="mb-3 text-start">
+                  <label for="message" class="form-label font-heading fw-bold"
+                    >Message</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="message"
+                    placeholder="Your message"
+                    required
+                  ></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary font-heading">
+                  Submit
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <footer class="bg-dark text-center text-white">
       <div class="container p-3">
-        <p>
-          Developed by Shane Kilian using Bootstrap, for Zaio Bootstrap course
-        </p>
+        <p>Developed by Shane Kilian using Bootstrap, for portfolio purposes</p>
       </div>
     </footer>
   </body>

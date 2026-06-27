@@ -69,10 +69,38 @@ header {
   border-bottom-color: #fff;
 }
 
+body:has(#home:target) #nav-home,
+body:has(#about-me:target) #nav-about,
+body:has(#projects:target) #nav-projects,
+body:has(#contact:target) #nav-contact {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
+body:not(:has(:target)) #nav-home {
+  color: #fff;
+  border-bottom-color: #fff;
+}
+
 .scrolling {
   background: black;
   opacity: 90%;
   transition: all 0.5s;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #000;
+  color: #fff;
+  padding: 8px 16px;
+  z-index: 2000;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 /*
