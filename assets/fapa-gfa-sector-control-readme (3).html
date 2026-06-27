@@ -1,0 +1,618 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAPA GFA Sector Control — Project Overview</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #0d1117;
+        --panel: #161b22;
+        --panel2: #1c2330;
+        --border: #30363d;
+        --border-light: rgba(48, 54, 61, 0.6);
+        --green: #3fb950;
+        --green-dim: rgba(63, 185, 80, 0.15);
+        --amber: #d29922;
+        --red: #f85149;
+        --text: #e6edf3;
+        --text-dim: #8b949e;
+        --mono: "JetBrains Mono", monospace;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--bg);
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+          linear-gradient(
+            90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px
+          );
+        background-size: 38px 38px;
+        color: var(--text);
+        line-height: 1.65;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 700;
+        letter-spacing: -0.2px;
+        color: var(--text);
+      }
+      .wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 24px 96px;
+      }
+
+      /* ── HEADER ── */
+      .hero {
+        position: relative;
+        padding: 64px 24px 48px;
+        border-bottom: 1px solid var(--border);
+        background: linear-gradient(
+          180deg,
+          rgba(63, 185, 80, 0.05),
+          transparent 70%
+        );
+      }
+      .hero-inner {
+        max-width: 920px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+
+      .statusline {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-family: var(--mono);
+        font-size: 12.5px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--text-dim);
+        margin-bottom: 22px;
+      }
+      .statusline .live {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        color: var(--green);
+      }
+      .statusline .live .pulse {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--green);
+        box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.6);
+        animation: pulse 2s infinite;
+      }
+      @keyframes pulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(63, 185, 80, 0.55);
+        }
+        70% {
+          box-shadow: 0 0 0 8px rgba(63, 185, 80, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(63, 185, 80, 0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .statusline .live .pulse {
+          animation: none;
+        }
+      }
+      .statusline .sep {
+        opacity: 0.4;
+      }
+
+      .hero h1 {
+        font-size: clamp(30px, 4.6vw, 46px);
+        line-height: 1.1;
+        max-width: 18ch;
+      }
+      .hero .org {
+        margin-top: 14px;
+        color: var(--text-dim);
+        font-size: 17px;
+        max-width: 58ch;
+      }
+      .hero .org strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .notice {
+        margin-top: 32px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--amber);
+        border-radius: 6px;
+        padding: 16px 18px;
+        max-width: 620px;
+      }
+      .notice svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .notice p {
+        font-size: 14.5px;
+        color: var(--text-dim);
+      }
+      .notice strong {
+        color: var(--text);
+      }
+
+      /* ── SECTIONS ── */
+      section {
+        padding: 56px 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+      section:last-child {
+        border-bottom: none;
+      }
+      .section-label {
+        font-family: var(--mono);
+        font-weight: 500;
+        font-size: 12.5px;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 12px;
+      }
+      section h2 {
+        font-size: 25px;
+        margin-bottom: 18px;
+      }
+      section > p {
+        color: var(--text-dim);
+        max-width: 64ch;
+        font-size: 15.5px;
+      }
+      section > p + p {
+        margin-top: 12px;
+      }
+
+      /* ── MAP MOCK PANEL ── */
+      .map-panel {
+        margin-top: 32px;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      .map-panel-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 12px 16px;
+        border-bottom: 1px solid var(--border);
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--text-dim);
+      }
+      .map-panel-header .clock {
+        color: var(--text);
+        letter-spacing: 1px;
+      }
+      .map-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 8px;
+        padding: 20px;
+      }
+      .map-cell {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.015);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--mono);
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text-dim);
+        position: relative;
+      }
+      .map-cell.occ-1 {
+        background: rgba(210, 153, 34, 0.12);
+        border-color: rgba(210, 153, 34, 0.35);
+        color: var(--amber);
+      }
+      .map-cell.occ-2 {
+        background: rgba(248, 81, 73, 0.1);
+        border-color: rgba(248, 81, 73, 0.35);
+        color: var(--red);
+      }
+      .map-cell .badge {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: var(--red);
+        color: #fff;
+        font-size: 9px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      @media (max-width: 560px) {
+        .map-grid {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+
+      /* ── ROLE TABLE ── */
+      .roles {
+        margin-top: 32px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--panel);
+      }
+      .role-row {
+        display: grid;
+        grid-template-columns: 160px 1fr;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .role-row:last-child {
+        border-bottom: none;
+      }
+      .role-tag {
+        padding: 18px 18px;
+        background: var(--panel2);
+        border-right: 1px solid var(--border-light);
+        font-family: var(--mono);
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: var(--text);
+        display: flex;
+        align-items: center;
+      }
+      .role-body {
+        padding: 18px 22px;
+        font-size: 14.5px;
+        color: var(--text-dim);
+      }
+      @media (max-width: 600px) {
+        .role-row {
+          grid-template-columns: 1fr;
+        }
+        .role-tag {
+          border-right: none;
+          border-bottom: 1px solid var(--border-light);
+        }
+      }
+
+      /* ── STACK GRID ── */
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+      }
+      .stack-card {
+        background: var(--panel);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 18px 20px;
+        transition: border-color 0.15s;
+      }
+      .stack-card:hover {
+        border-color: var(--border);
+      }
+      .stack-card .tag {
+        font-family: var(--mono);
+        font-weight: 500;
+        font-size: 11px;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        color: var(--green);
+        margin-bottom: 8px;
+      }
+      .stack-card .name {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .stack-card .desc {
+        font-size: 13.5px;
+        color: var(--text-dim);
+      }
+
+      /* ── BOUNDARY LIST ── */
+      .boundary {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .boundary-col h3 {
+        font-size: 13px;
+        font-family: var(--mono);
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .boundary-col.yes h3 {
+        color: var(--green);
+      }
+      .boundary-col.no h3 {
+        color: var(--amber);
+      }
+      .boundary-col ul {
+        list-style: none;
+      }
+      .boundary-col li {
+        font-size: 14.5px;
+        color: var(--text-dim);
+        padding: 9px 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .boundary-col li:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 620px) {
+        .boundary {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        padding: 40px 24px;
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 13px;
+        font-family: var(--mono);
+      }
+      footer .mark {
+        color: var(--green);
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--green);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-inner">
+        <div class="statusline">
+          <span class="live"
+            ><span class="pulse"></span>Confidential Project</span
+          >
+          <span class="sep">/</span>
+          <span>Overview Only</span>
+        </div>
+        <h1>FAPA GFA Sector Control</h1>
+        <p class="org">
+          Built with the help of AI for <strong>43 Air School</strong> — a live,
+          map-based airspace sector occupancy board that keeps Ground, Tower,
+          and Operations looking at the same picture in real time.
+        </p>
+
+        <div class="notice">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#d29922"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="13" />
+            <line x1="12" y1="16" x2="12" y2="16.01" />
+          </svg>
+          <p>
+            <strong>Why there's no live link:</strong> This project was built
+            with the help of AI under a confidentiality agreement with the
+            client. I'm not able to share the live application, source code, or
+            any real data from it. This page describes what the system does, how
+            it's built, and the role it plays — without exposing anything
+            covered by that agreement.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <section>
+        <div class="section-label">// what it is</div>
+        <h2>One shared picture of who's where, updated instantly</h2>
+        <p>
+          Flight training airspace is divided into operating sectors. Before
+          this system, knowing which sectors were occupied and by how many
+          aircraft relied on radio calls and whoever happened to be near a
+          whiteboard. That worked, but it didn't scale well and it left no
+          shared, glanceable picture for everyone making decisions at the same
+          time.
+        </p>
+        <p>
+          This system puts that picture on a screen: a real chart of the area
+          with each sector overlaid, color-coded by occupancy, updating the
+          instant anyone makes a change — no refresh, no relay, no "let me just
+          go check."
+        </p>
+      </section>
+
+      <section>
+        <div class="section-label">// how it looks</div>
+        <h2>A live occupancy board, not a static map</h2>
+        <p>
+          Each sector on the chart is its own interactive region. Clicking a
+          sector cycles its occupancy count, and the colour and badge update for
+          every connected device at once — Ground, Tower, and Ops all see the
+          same board, live.
+        </p>
+
+        <div class="map-panel">
+          <div class="map-panel-header">
+            <span>SECTOR OVERLAY — LIVE</span>
+            <span class="clock">14:32:07 UTC</span>
+          </div>
+          <div class="map-grid">
+            <div class="map-cell">—</div>
+            <div class="map-cell occ-1">1</div>
+            <div class="map-cell">—</div>
+            <div class="map-cell">—</div>
+            <div class="map-cell occ-2">2<span class="badge">2</span></div>
+            <div class="map-cell">—</div>
+            <div class="map-cell occ-1">1</div>
+            <div class="map-cell">—</div>
+            <div class="map-cell occ-1">1</div>
+            <div class="map-cell">—</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">// who's looking at it</div>
+        <h2>Same board, different permissions</h2>
+        <p>
+          Everyone sees identical, real-time data — what changes is who's
+          allowed to change it.
+        </p>
+
+        <div class="roles">
+          <div class="role-row">
+            <div class="role-tag">Ground / Tower</div>
+            <div class="role-body">
+              Can click sectors to update occupancy as aircraft move, and clear
+              the board at the end of a session. The system enforces a few
+              built-in operating rules automatically with the help of AI — like
+              per-sector capacity limits — so the board can't silently drift out
+              of sync with what's actually allowed.
+            </div>
+          </div>
+          <div class="role-row">
+            <div class="role-tag">Operations</div>
+            <div class="role-body">
+              A read-only view of the same live board — full situational
+              awareness without the ability to accidentally change what Ground
+              or Tower are actively managing.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">// how it's built with the help of AI</div>
+        <h2>Stack &amp; approach</h2>
+        <p>
+          Built deliberately small: no framework, no build step, and a real-time
+          backend that does the heavy lifting of keeping every screen in sync.
+        </p>
+
+        <div class="stack-grid">
+          <div class="stack-card">
+            <div class="tag">Frontend</div>
+            <div class="name">Vanilla JS + SVG</div>
+            <div class="desc">
+              The chart is a real map image with an interactive SVG overlay
+              traced over it — each sector is its own clickable shape, not a
+              pre-baked image.
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="tag">Realtime sync</div>
+            <div class="name">Firebase Realtime Database</div>
+            <div class="desc">
+              Every occupancy change is written to a shared database that pushes
+              the update to all connected screens instantly, with no polling or
+              manual refresh.
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="tag">Auth &amp; roles</div>
+            <div class="name">Firebase Authentication</div>
+            <div class="desc">
+              Sign-in determines whether a user gets control of the board or a
+              read-only operations view.
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="tag">Hosting</div>
+            <div class="name">Firebase Hosting</div>
+            <div class="desc">
+              Static hosting with continuous deployment, kept deliberately
+              simple since the app has no server-side code to run.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">// scope of this overview</div>
+        <h2>What I can and can't show</h2>
+        <p>
+          This project was developed under a signed confidentiality agreement.
+          The boundary below is intentional, not a technical limitation.
+        </p>
+
+        <div class="boundary">
+          <div class="boundary-col yes">
+            <h3>Happy to discuss</h3>
+            <ul>
+              <li>Overall architecture and tech decisions</li>
+              <li>
+                How the real-time sync and role permissions work conceptually
+              </li>
+              <li>Design and UX choices</li>
+              <li>Challenges solved during the build with the help of AI</li>
+            </ul>
+          </div>
+          <div class="boundary-col no">
+            <h3>Off limits</h3>
+            <ul>
+              <li>Live application access or source code</li>
+              <li>API keys, credentials, or database structure</li>
+              <li>Real sector names, layouts, or operating rules</li>
+              <li>Any live occupancy or operational data</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <span class="mark">FAPA / GFA SECTOR CONTROL</span><br />
+      Project overview — built with the help of AI and maintained under NDA.
+    </footer>
+  </body>
+</html>

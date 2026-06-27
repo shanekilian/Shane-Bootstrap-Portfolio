@@ -1,0 +1,681 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAPA Tower Document Control — Project Overview</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --navy: #0b2545;
+        --navy-mid: #13315c;
+        --gold: #c9a84c;
+        --gold-light: #e8c96d;
+        --sky: #4fc3f7;
+        --green: #5fb88a;
+        --white: #f0f4fc;
+        --surface2: #112240;
+        --surface3: #162d4f;
+        --border: rgba(201, 168, 76, 0.18);
+        --border-light: rgba(201, 168, 76, 0.08);
+        --text: #e8f0fc;
+        --text-dim: #93a3ba;
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Source Sans 3", sans-serif;
+        background: var(--navy);
+        background-image:
+          radial-gradient(
+            circle at 85% 0%,
+            rgba(26, 74, 138, 0.3),
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at 0% 60%,
+            rgba(201, 168, 76, 0.05),
+            transparent 40%
+          );
+        color: var(--text);
+        line-height: 1.65;
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Rajdhani", sans-serif;
+        letter-spacing: 0.3px;
+        color: var(--white);
+      }
+      .wrap {
+        max-width: 920px;
+        margin: 0 auto;
+        padding: 0 24px 96px;
+      }
+
+      /* ── HEADER / FILED-STAMP SIGNATURE ── */
+      .hero {
+        position: relative;
+        padding: 72px 24px 56px;
+        border-bottom: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .stamp {
+        position: absolute;
+        top: 56px;
+        right: 40px;
+        width: 150px;
+        height: 150px;
+        border: 2px solid rgba(201, 168, 76, 0.35);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-14deg);
+        opacity: 0.8;
+      }
+      .stamp::before {
+        content: "";
+        position: absolute;
+        inset: 12px;
+        border: 1px solid rgba(201, 168, 76, 0.25);
+        border-radius: 50%;
+      }
+      .stamp-text {
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: 2px;
+        color: var(--gold);
+        text-align: center;
+        line-height: 1.5;
+        text-transform: uppercase;
+      }
+      @media (max-width: 700px) {
+        .stamp {
+          display: none;
+        }
+      }
+
+      .hero-inner {
+        max-width: 920px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 1;
+      }
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 18px;
+      }
+      .eyebrow .dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--gold);
+        box-shadow: 0 0 10px var(--gold-light);
+      }
+      .hero h1 {
+        font-size: clamp(30px, 4.6vw, 46px);
+        font-weight: 700;
+        line-height: 1.12;
+        max-width: 16ch;
+      }
+      .hero .org {
+        margin-top: 14px;
+        color: var(--text-dim);
+        font-size: 17px;
+        font-weight: 400;
+        max-width: 56ch;
+      }
+      .hero .org strong {
+        color: var(--text);
+        font-weight: 600;
+      }
+
+      .notice {
+        margin-top: 32px;
+        display: flex;
+        gap: 12px;
+        align-items: flex-start;
+        background: var(--surface2);
+        border: 1px solid var(--border);
+        border-left: 3px solid var(--gold);
+        border-radius: 8px;
+        padding: 16px 18px;
+        max-width: 620px;
+      }
+      .notice svg {
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .notice p {
+        font-size: 14.5px;
+        color: var(--text-dim);
+      }
+      .notice strong {
+        color: var(--text);
+      }
+
+      /* ── SECTIONS ── */
+      section {
+        padding: 56px 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+      section:last-child {
+        border-bottom: none;
+      }
+      .section-label {
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-size: 13px;
+        letter-spacing: 1.6px;
+        text-transform: uppercase;
+        color: var(--gold);
+        margin-bottom: 12px;
+      }
+      section h2 {
+        font-size: 26px;
+        font-weight: 600;
+        margin-bottom: 18px;
+      }
+      section > p {
+        color: var(--text-dim);
+        max-width: 64ch;
+        font-size: 15.5px;
+      }
+      section > p + p {
+        margin-top: 12px;
+      }
+
+      /* ── LOGBOOK / REGISTER ── */
+      .register {
+        margin-top: 32px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+        background: var(--surface2);
+      }
+      .reg-row {
+        display: grid;
+        grid-template-columns: 56px 200px 1fr;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .reg-row:last-child {
+        border-bottom: none;
+      }
+      .reg-num {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 22px 0;
+        background: var(--surface3);
+        border-right: 1px solid var(--border-light);
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--gold);
+      }
+      .reg-tag {
+        padding: 22px 20px;
+        background: var(--surface3);
+        border-right: 1px solid var(--border-light);
+      }
+      .reg-tag .label {
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--white);
+        letter-spacing: 0.4px;
+      }
+      .reg-tag .sub {
+        font-size: 12.5px;
+        color: var(--text-dim);
+        margin-top: 4px;
+      }
+      .reg-body {
+        padding: 20px 24px;
+        font-size: 14.5px;
+        color: var(--text-dim);
+      }
+      @media (max-width: 680px) {
+        .reg-row {
+          grid-template-columns: 1fr;
+        }
+        .reg-num {
+          display: none;
+        }
+        .reg-tag {
+          border-right: none;
+          border-bottom: 1px solid var(--border-light);
+        }
+      }
+
+      /* ── STACK GRID ── */
+      .stack-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 14px;
+        margin-top: 28px;
+      }
+      .stack-card {
+        background: var(--surface2);
+        border: 1px solid var(--border-light);
+        border-radius: 10px;
+        padding: 18px 20px;
+        transition: border-color 0.15s;
+      }
+      .stack-card:hover {
+        border-color: var(--border);
+      }
+      .stack-card .tag {
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        font-size: 11.5px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: var(--sky);
+        margin-bottom: 8px;
+      }
+      .stack-card .name {
+        font-size: 16px;
+        font-weight: 600;
+        color: var(--white);
+        margin-bottom: 6px;
+      }
+      .stack-card .desc {
+        font-size: 13.5px;
+        color: var(--text-dim);
+      }
+
+      /* ── PAPER TRAIL ── */
+      .trail {
+        margin-top: 32px;
+        position: relative;
+        padding-left: 28px;
+      }
+      .trail::before {
+        content: "";
+        position: absolute;
+        left: 6px;
+        top: 6px;
+        bottom: 6px;
+        width: 1px;
+        background: var(--border);
+      }
+      .trail-item {
+        position: relative;
+        padding-bottom: 26px;
+      }
+      .trail-item:last-child {
+        padding-bottom: 0;
+      }
+      .trail-item::before {
+        content: "";
+        position: absolute;
+        left: -28px;
+        top: 4px;
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--navy);
+        border: 2px solid var(--gold);
+      }
+      .trail-item .ttl {
+        font-weight: 600;
+        color: var(--white);
+        font-size: 15.5px;
+        margin-bottom: 4px;
+      }
+      .trail-item .txt {
+        font-size: 14px;
+        color: var(--text-dim);
+        max-width: 58ch;
+      }
+
+      /* ── BOUNDARY LIST ── */
+      .boundary {
+        margin-top: 28px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+      .boundary-col h3 {
+        font-size: 14px;
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        letter-spacing: 0.8px;
+        text-transform: uppercase;
+        margin-bottom: 14px;
+      }
+      .boundary-col.yes h3 {
+        color: var(--sky);
+      }
+      .boundary-col.no h3 {
+        color: var(--gold);
+      }
+      .boundary-col ul {
+        list-style: none;
+      }
+      .boundary-col li {
+        font-size: 14.5px;
+        color: var(--text-dim);
+        padding: 9px 0;
+        border-bottom: 1px solid var(--border-light);
+      }
+      .boundary-col li:last-child {
+        border-bottom: none;
+      }
+      @media (max-width: 620px) {
+        .boundary {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ── FOOTER ── */
+      footer {
+        padding: 40px 24px;
+        text-align: center;
+        color: var(--text-dim);
+        font-size: 13px;
+      }
+      footer .mark {
+        color: var(--gold);
+        font-family: "Rajdhani", sans-serif;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 2px solid var(--gold);
+        outline-offset: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="stamp">
+        <div class="stamp-text">Records<br />On File</div>
+      </div>
+      <div class="hero-inner">
+        <div class="eyebrow">
+          <span class="dot"></span>Confidential Project — Overview Only
+        </div>
+        <h1>FAPA Tower Document Control</h1>
+        <p class="org">
+          Built with the help of AI for <strong>43 Air School</strong> — an
+          operational records system for Port Alfred Tower, replacing paper logs
+          with a single accountable digital register.
+        </p>
+
+        <div class="notice">
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="#c9a84c"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="13" />
+            <line x1="12" y1="16" x2="12" y2="16.01" />
+          </svg>
+          <p>
+            <strong>Why there's no live link:</strong> This project was built
+            with the help of AI under a confidentiality agreement with the
+            client. I'm not able to share the live application, source code, or
+            any real data from it. This page describes what the system does, how
+            it's built, and the role it plays — without exposing anything
+            covered by that agreement.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <section>
+        <div class="section-label">What it is</div>
+        <h2>
+          A single, signed-off record for everything that happens in the Tower
+        </h2>
+        <p>
+          Port Alfred Tower needed one accountable place to log who was on duty,
+          when, doing what — and to keep that record provable after the fact.
+          Attendance, weekly duty rosters, training sign-offs, license checks,
+          and equipment faults all generate paperwork that someone, eventually,
+          has to be able to point to and say "here's proof this happened, and
+          here's who signed off on it."
+        </p>
+        <p>
+          This system replaces that scattered paper trail with one register,
+          gated by role, where every entry carries a timestamp, a name, and —
+          where it matters — a digital signature.
+        </p>
+      </section>
+
+      <section>
+        <div class="section-label">What it tracks</div>
+        <h2>Six registers, one system</h2>
+        <p>
+          Each module is its own logbook, but they all sit inside the same app,
+          under the same accountability model.
+        </p>
+
+        <div class="register">
+          <div class="reg-row">
+            <div class="reg-num">01</div>
+            <div class="reg-tag">
+              <div class="label">Attendance</div>
+              <div class="sub">Daily register</div>
+            </div>
+            <div class="reg-body">
+              Staff clock in and out, log breaks, and sign their own daily
+              record. Admins can review and countersign entries, so there's a
+              clear chain of who confirmed what.
+            </div>
+          </div>
+          <div class="reg-row">
+            <div class="reg-num">02</div>
+            <div class="reg-tag">
+              <div class="label">Duties</div>
+              <div class="sub">Weekly roster</div>
+            </div>
+            <div class="reg-body">
+              Recurring duty assignments are generated automatically each week,
+              tracked through to completion, and can be handed over between
+              staff. Overdue or missed duties trigger a notification rather than
+              going quietly unnoticed.
+            </div>
+          </div>
+          <div class="reg-row">
+            <div class="reg-num">03</div>
+            <div class="reg-tag">
+              <div class="label">Training Files</div>
+              <div class="sub">Per-trainee record</div>
+            </div>
+            <div class="reg-body">
+              Each trainee has a running file of debriefs and structured
+              assessments. Entries are editable until signed off, after which
+              they're locked and exportable as a formal PDF training record.
+            </div>
+          </div>
+          <div class="reg-row">
+            <div class="reg-num">04</div>
+            <div class="reg-tag">
+              <div class="label">License Checks</div>
+              <div class="sub">Compliance record</div>
+            </div>
+            <div class="reg-body">
+              Periodic license checks are logged per staff member and exportable
+              on demand, giving admins a clear compliance history without
+              digging through paper files.
+            </div>
+          </div>
+          <div class="reg-row">
+            <div class="reg-num">05</div>
+            <div class="reg-tag">
+              <div class="label">Unserviceability Log</div>
+              <div class="sub">Equipment faults</div>
+            </div>
+            <div class="reg-body">
+              Faults are reported as they happen, tracked month to month if
+              unresolved, and closed out with a signed fix record. A monthly
+              sign-off gives the Officer in Charge a clean, exportable log.
+            </div>
+          </div>
+          <div class="reg-row">
+            <div class="reg-num">06</div>
+            <div class="reg-tag">
+              <div class="label">User Management</div>
+              <div class="sub">Admin only</div>
+            </div>
+            <div class="reg-body">
+              Admins approve new accounts and manage who has access to what —
+              keeping the register's integrity tied to a controlled list of real
+              people.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">How it's built with the help of AI</div>
+        <h2>Stack &amp; approach</h2>
+        <p>
+          Built as a lightweight, dependency-light web app rather than a heavy
+          framework project — fast to load on a Tower desktop, and cheap to host
+          and maintain long-term.
+        </p>
+
+        <div class="stack-grid">
+          <div class="stack-card">
+            <div class="tag">Frontend</div>
+            <div class="name">Vanilla JS &amp; CSS</div>
+            <div class="desc">
+              A modular, hand-built single-page app — no UI framework — with
+              client-side rendering and a printable-document layer for exports.
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="tag">Backend / Data</div>
+            <div class="name">Supabase</div>
+            <div class="desc">
+              Postgres database with authentication and role-based access, so
+              the data layer enforces who can see and sign what — not just the
+              UI.
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="tag">Hosting</div>
+            <div class="name">Netlify</div>
+            <div class="desc">
+              Continuous deployment straight from the source repository, with
+              environment-managed secrets kept out of version control.
+            </div>
+          </div>
+          <div class="stack-card">
+            <div class="tag">Notifications</div>
+            <div class="name">Automated email</div>
+            <div class="desc">
+              Missed duties, reported faults, and fixed faults all trigger an
+              email to the relevant staff — no one has to go looking for the
+              news.
+            </div>
+          </div>
+        </div>
+
+        <div class="trail">
+          <div class="trail-item">
+            <div class="ttl">Entry is made</div>
+            <div class="txt">
+              A staff member clocks in, completes a duty, writes a debrief, or
+              reports a fault — each tied to their authenticated identity.
+            </div>
+          </div>
+          <div class="trail-item">
+            <div class="ttl">Sign-off where it matters</div>
+            <div class="txt">
+              Training entries, duty completions, and snag fixes carry a digital
+              signature before they're considered closed.
+            </div>
+          </div>
+          <div class="trail-item">
+            <div class="ttl">Relevant people are notified</div>
+            <div class="txt">
+              Missed duties and open faults are emailed automatically, so
+              accountability doesn't depend on someone remembering to check.
+            </div>
+          </div>
+          <div class="trail-item">
+            <div class="ttl">Record becomes exportable</div>
+            <div class="txt">
+              Every register can be pulled as a clean, print-ready PDF — the
+              same document trail a paper logbook would have produced, without
+              the paper.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div class="section-label">Scope of this overview</div>
+        <h2>What I can and can't show</h2>
+        <p>
+          This project was developed under a signed confidentiality agreement.
+          The boundary below is intentional, not a technical limitation.
+        </p>
+
+        <div class="boundary">
+          <div class="boundary-col yes">
+            <h3>Happy to discuss</h3>
+            <ul>
+              <li>Overall architecture and tech decisions</li>
+              <li>
+                How the accountability / sign-off model works conceptually
+              </li>
+              <li>Design and UX choices</li>
+              <li>Challenges solved during the build with the help of AI</li>
+            </ul>
+          </div>
+          <div class="boundary-col no">
+            <h3>Off limits</h3>
+            <ul>
+              <li>Live application access or source code</li>
+              <li>API keys, credentials, or database structure</li>
+              <li>Any real staff, attendance, or training data</li>
+              <li>Internal operational or compliance specifics</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <span class="mark">FAPA / TOWER DOCUMENT CONTROL</span><br />
+      Project overview — builtwith the help of AI and maintained under NDA.
+    </footer>
+  </body>
+</html>
