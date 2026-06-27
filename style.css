@@ -23,6 +23,11 @@ body {
  * Header
  */
 
+header {
+  background: black;
+  opacity: 90%;
+  transition: all 0.5s;
+}
 .banner-wrap {
   background-image: url(./assets/cover.jpg);
   background-size: cover;
@@ -66,6 +71,163 @@ body {
 
 .scrolling {
   background: black;
-  opacity: 80%;
+  opacity: 90%;
   transition: all 0.5s;
+}
+
+/*
+ * Print functions
+ */
+
+@media print {
+  header,
+  .banner-wrap,
+  #print-resume,
+  #contact form,
+  #contact .fs-2,
+  footer {
+    display: none !important;
+  }
+
+  #projects a {
+    display: none !important;
+  }
+
+  .card-img-top {
+    display: none !important;
+  }
+
+  .badge.bg-danger {
+    display: none !important;
+  }
+
+  @page {
+    margin: 0.5in;
+  }
+
+  body {
+    background: #fff !important;
+    color: #000 !important;
+    font-size: 9.5pt !important;
+    line-height: 1.25 !important;
+    padding-top: 0 !important;
+  }
+
+  .container,
+  .p-5,
+  .p-3,
+  .p-4 {
+    padding: 0.15rem !important;
+    max-width: 100% !important;
+  }
+
+  .mb-5,
+  .mt-3 {
+    margin: 0.1rem 0 !important;
+  }
+
+  .card-body {
+    padding: 0.2rem !important;
+  }
+
+  .card {
+    box-shadow: none !important;
+    border: 1px solid #000 !important;
+    border-radius: 0 !important;
+    background: #fff !important;
+    page-break-inside: avoid;
+  }
+
+  section {
+    page-break-inside: avoid;
+  }
+
+  #about-me img {
+    max-width: 80px !important;
+  }
+
+  #about-me p {
+    margin: 0 !important;
+    font-size: 9pt !important;
+  }
+
+  #about-me .lead {
+    font-size: 9pt !important;
+  }
+
+  #projects .row {
+    display: block !important;
+  }
+
+  #projects .col-md-4 {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  #projects .card {
+    padding: 0.15rem !important;
+    margin-bottom: 0.15rem !important;
+  }
+
+  #projects .card-title {
+    font-size: 10pt !important;
+    margin: 0 !important;
+    display: inline;
+  }
+
+  #projects .card-text {
+    font-size: 9pt !important;
+    margin: 0 !important;
+    display: inline;
+  }
+
+  #projects .card-text::before {
+    content: " — ";
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  .btn {
+    border: 1px solid #000 !important;
+    background: none !important;
+    color: #000 !important;
+    padding: 1px 4px !important;
+    font-size: 8.5pt !important;
+  }
+
+  .badge.bg-dark {
+    background: none !important;
+    border: 1px solid #000 !important;
+    color: #000 !important;
+    font-size: 8.5pt !important;
+  }
+
+  mark {
+    background: none !important;
+    color: #000 !important;
+    font-weight: bold;
+    padding: 0 !important;
+  }
+
+  h1,
+  .display-1 {
+    font-size: 14pt !important;
+    margin: 0.15rem 0 !important;
+  }
+
+  h2 {
+    font-size: 12pt !important;
+  }
+
+  h5,
+  .card-title {
+    font-size: 10pt !important;
+  }
+
+  .lead {
+    font-size: 9pt !important;
+  }
 }
